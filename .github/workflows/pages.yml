@@ -55,7 +55,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo --minify -d ./public --baseURL https://bkannsou.github.io/
+          hugo --minify -d ./public --baseURL https://teiboku.github.io/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
@@ -65,7 +65,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: https://bkannsou.github.io/
+      url: https://teiboku.github.io/
     runs-on: ubuntu-latest
     needs: build
     steps:
