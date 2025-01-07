@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kannsou</title><link>https://teiboku.github.io/</link><description>Recent content on Kannsou</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://teiboku.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>D5 Render-Rhino Sync Plugin</title><link>https://teiboku.github.io/projects/1735963425218-d5-render-rhino-sync-plugin/</link><pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate><guid>https://teiboku.github.io/projects/1735963425218-d5-render-rhino-sync-plugin/</guid><description>&lt;p>an example to get you started&lt;/p>
+&lt;h1 class="relative group">This is a heading
+&lt;div id="this-is-a-heading" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#this-is-a-heading" aria-label="Anchor">#&lt;/a>
+&lt;/span>
+&lt;/h1>
+&lt;h2 class="relative group">This is a subheading
+&lt;div id="this-is-a-subheading" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#this-is-a-subheading" aria-label="Anchor">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">This is a subsubheading
+&lt;div id="this-is-a-subsubheading" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#this-is-a-subsubheading" aria-label="Anchor">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;h4 class="relative group">This is a subsubsubheading
+&lt;div id="this-is-a-subsubsubheading" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#this-is-a-subsubsubheading" aria-label="Anchor">#&lt;/a>
+&lt;/span>
+&lt;/h4>
+&lt;p>This is a paragraph with &lt;strong>bold&lt;/strong> and &lt;em>italic&lt;/em> text.
+Check more at &lt;a href="https://blowfish.page/" target="_blank">Blowfish documentation&lt;/a>
+undefined&lt;/p></description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://teiboku.github.io/projects/1735963425218-d5-render-rhino-sync-plugin/featured.png"/></item><item><title/><link>https://teiboku.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://teiboku.github.io/about/</guid><description>&lt;h2 class="relative group">About Me
+&lt;div id="about-me" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#about-me" aria-label="Anchor">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;p>I was born in Shandong Province and grew up in Tianjin, China. After spending seven years studying in Nanjing, I came to Japan to pursue my PhD degree.&lt;/p>
+&lt;p>I&amp;rsquo;m a big fan of Japanese curry and Sukiyaki. In my free time, I enjoy playing soccer and listening to Japanese rock music, especially Blue Hearts and X Japan - two of my all-time favorite bands.&lt;/p></description></item><item><title/><link>https://teiboku.github.io/posts/test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://teiboku.github.io/posts/test/</guid><description>&lt;h1 class="relative group">dwadad
+&lt;div id="dwadad" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#dwadad" aria-label="Anchor">#&lt;/a>
+&lt;/span>
+&lt;/h1></description></item><item><title>My Resume</title><link>https://teiboku.github.io/resume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://teiboku.github.io/resume/</guid><description>&lt;script type="text/javascript" src= '/js/pdf-js/build/pdf.js'>&lt;/script>
+&lt;style>
+#embed-pdf-container {
+position: relative;
+width: 100%;
+height: auto;
+min-height: 20vh;
+}
+.pdf-canvas {
+border: 1px solid black;
+direction: ltr;
+width: 100%;
+height: auto;
+display: none;
+}
+#the-canvas {
+border: 1px solid black;
+direction: ltr;
+width: 100%;
+height: auto;
+display: none;
+}
+.pdf-loadingWrapper {
+display: none;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 350px;
+}
+.pdf-loading {
+display: inline-block;
+width: 50px;
+height: 50px;
+border: 3px solid #d2d0d0;;
+border-radius: 50%;
+border-top-color: #383838;
+animation: spin 1s ease-in-out infinite;
+-webkit-animation: spin 1s ease-in-out infinite;
+}
+#overlayText {
+word-wrap: break-word;
+display: grid;
+justify-content: end;
+}
+#overlayText a {
+position: relative;
+top: 10px;
+right: 4px;
+color: #000;
+margin: auto;
+background-color: #eeeeee;
+padding: 0.3em 1em;
+border: solid 2px;
+border-radius: 12px;
+border-color: #00000030;
+text-decoration: none;
+}
+#overlayText svg {
+height: clamp(1em, 2vw, 1.4em);
+width: clamp(1em, 2vw, 1.4em);
+}
+@keyframes spin {
+to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+to { -webkit-transform: rotate(360deg); }
+}
+&lt;/style>&lt;div class="embed-pdf-container" id="embed-pdf-container-c72b714a">
+&lt;div class="pdf-loadingWrapper" id="pdf-loadingWrapper-c72b714a">
+&lt;div class="pdf-loading" id="pdf-loading-c72b714a">&lt;/div>
+&lt;/div>
+&lt;div id="overlayText">
+&lt;a href="./congguan_en.pdf" aria-label="Download" download>
+&lt;svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+&lt;path d="M9 13c.3 0 .5-.1.7-.3L15.4 7 14 5.6l-4 4V1H8v8.6l-4-4L2.6 7l5.7 5.7c.2.2.4.3.7.3zm-7 2h14v2H2z" />
+&lt;/svg>
+&lt;/a>
+&lt;/div>
+&lt;canvas class="pdf-canvas" id="pdf-canvas-c72b714a">&lt;/canvas>
+&lt;/div>
+&lt;div class="pdf-paginator" id="pdf-paginator-c72b714a">
+&lt;button id="pdf-prev-c72b714a">Previous&lt;/button>
+&lt;button id="pdf-next-c72b714a">Next&lt;/button> &amp;nbsp; &amp;nbsp;
+&lt;span>
+&lt;span class="pdf-pagenum" id="pdf-pagenum-c72b714a">&lt;/span> / &lt;span class="pdf-pagecount" id="pdf-pagecount-c72b714a">&lt;/span>
+&lt;/span>
+&lt;a class="pdf-source" id="pdf-source-c72b714a" href="./congguan_en.pdf">[pdf]&lt;/a>
+&lt;/div>
+&lt;noscript>
+View the PDF file &lt;a class="pdf-source" id="pdf-source-noscript-c72b714a" href="./congguan_en.pdf">here&lt;/a>.
+&lt;/noscript>
+&lt;script type="text/javascript">
+(function(){
+var url = '.\/congguan_en.pdf';
+var hidePaginator = "" === "true";
+var hideLoader = "" === "true";
+var selectedPageNum = parseInt("") || 1;
+var pdfjsLib = window['pdfjs-dist/build/pdf'];
+if (pdfjsLib.GlobalWorkerOptions.workerSrc == '')
+pdfjsLib.GlobalWorkerOptions.workerSrc = "https:\/\/teiboku.github.io\/" + '/js/pdf-js/build/pdf.worker.js';
+var pdfDoc = null,
+pageNum = selectedPageNum,
+pageRendering = false,
+pageNumPending = null,
+scale = 3,
+canvas = document.getElementById('pdf-canvas-c72b714a'),
+ctx = canvas.getContext('2d'),
+paginator = document.getElementById("pdf-paginator-c72b714a"),
+loadingWrapper = document.getElementById('pdf-loadingWrapper-c72b714a');
+showPaginator();
+showLoader();
+function renderPage(num) {
+pageRendering = true;
+pdfDoc.getPage(num).then(function(page) {
+var viewport = page.getViewport({scale: scale});
+canvas.height = viewport.height;
+canvas.width = viewport.width;
+var renderContext = {
+canvasContext: ctx,
+viewport: viewport
+};
+var renderTask = page.render(renderContext);
+renderTask.promise.then(function() {
+pageRendering = false;
+showContent();
+if (pageNumPending !== null) {
+renderPage(pageNumPending);
+pageNumPending = null;
+}
+});
+});
+document.getElementById('pdf-pagenum-c72b714a').textContent = num;
+}
+function showContent() {
+loadingWrapper.style.display = 'none';
+canvas.style.display = 'block';
+}
+function showLoader() {
+if(hideLoader) return
+loadingWrapper.style.display = 'flex';
+canvas.style.display = 'none';
+}
+function showPaginator() {
+if(hidePaginator) return
+paginator.style.display = 'block';
+}
+function queueRenderPage(num) {
+if (pageRendering) {
+pageNumPending = num;
+} else {
+renderPage(num);
+}
+}
+function onPrevPage() {
+if (pageNum &lt;= 1) {
+return;
+}
+pageNum--;
+queueRenderPage(pageNum);
+}
+document.getElementById('pdf-prev-c72b714a').addEventListener('click', onPrevPage);
+function onNextPage() {
+if (pageNum >= pdfDoc.numPages) {
+return;
+}
+pageNum++;
+queueRenderPage(pageNum);
+}
+document.getElementById('pdf-next-c72b714a').addEventListener('click', onNextPage);
+pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+pdfDoc = pdfDoc_;
+var numPages = pdfDoc.numPages;
+document.getElementById('pdf-pagecount-c72b714a').textContent = numPages;
+if(pageNum > numPages) {
+pageNum = numPages
+}
+renderPage(pageNum);
+});
+})();
+&lt;/script></description></item></channel></rss>
