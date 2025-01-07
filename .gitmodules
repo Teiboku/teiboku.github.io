@@ -4,4 +4,4 @@
 	branch = main
 [submodule "themes/hugo-embed-pdf-shortcode"]
 	path = themes/hugo-embed-pdf-shortcode
-	url = https://github.com/anvithks/hugo-embed-pdf-shortcode.git
+	url = https://github.com/Teiboku/hugo-embed-pdf-shortcode.git
