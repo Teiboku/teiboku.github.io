@@ -116,33 +116,33 @@ to { -webkit-transform: rotate(360deg); }
 @-webkit-keyframes spin {
 to { -webkit-transform: rotate(360deg); }
 }
-&lt;/style>&lt;div class="embed-pdf-container" id="embed-pdf-container-bcd33f7e">
-&lt;div class="pdf-loadingWrapper" id="pdf-loadingWrapper-bcd33f7e">
-&lt;div class="pdf-loading" id="pdf-loading-bcd33f7e">&lt;/div>
+&lt;/style>&lt;div class="embed-pdf-container" id="embed-pdf-container-0263e339">
+&lt;div class="pdf-loadingWrapper" id="pdf-loadingWrapper-0263e339">
+&lt;div class="pdf-loading" id="pdf-loading-0263e339">&lt;/div>
 &lt;/div>
 &lt;div id="overlayText">
-&lt;a href="https://teiboku.github.io/file/congguan_en.pdf" aria-label="Download" download>
+&lt;a href="congguan_en.pdf" aria-label="Download" download>
 &lt;svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
 &lt;path d="M9 13c.3 0 .5-.1.7-.3L15.4 7 14 5.6l-4 4V1H8v8.6l-4-4L2.6 7l5.7 5.7c.2.2.4.3.7.3zm-7 2h14v2H2z" />
 &lt;/svg>
 &lt;/a>
 &lt;/div>
-&lt;canvas class="pdf-canvas" id="pdf-canvas-bcd33f7e">&lt;/canvas>
+&lt;canvas class="pdf-canvas" id="pdf-canvas-0263e339">&lt;/canvas>
 &lt;/div>
-&lt;div class="pdf-paginator" id="pdf-paginator-bcd33f7e">
-&lt;button id="pdf-prev-bcd33f7e">Previous&lt;/button>
-&lt;button id="pdf-next-bcd33f7e">Next&lt;/button> &amp;nbsp; &amp;nbsp;
+&lt;div class="pdf-paginator" id="pdf-paginator-0263e339">
+&lt;button id="pdf-prev-0263e339">Previous&lt;/button>
+&lt;button id="pdf-next-0263e339">Next&lt;/button> &amp;nbsp; &amp;nbsp;
 &lt;span>
-&lt;span class="pdf-pagenum" id="pdf-pagenum-bcd33f7e">&lt;/span> / &lt;span class="pdf-pagecount" id="pdf-pagecount-bcd33f7e">&lt;/span>
+&lt;span class="pdf-pagenum" id="pdf-pagenum-0263e339">&lt;/span> / &lt;span class="pdf-pagecount" id="pdf-pagecount-0263e339">&lt;/span>
 &lt;/span>
-&lt;a class="pdf-source" id="pdf-source-bcd33f7e" href="https://teiboku.github.io/file/congguan_en.pdf">[pdf]&lt;/a>
+&lt;a class="pdf-source" id="pdf-source-0263e339" href="congguan_en.pdf">[pdf]&lt;/a>
 &lt;/div>
 &lt;noscript>
-View the PDF file &lt;a class="pdf-source" id="pdf-source-noscript-bcd33f7e" href="https://teiboku.github.io/file/congguan_en.pdf">here&lt;/a>.
+View the PDF file &lt;a class="pdf-source" id="pdf-source-noscript-0263e339" href="congguan_en.pdf">here&lt;/a>.
 &lt;/noscript>
 &lt;script type="text/javascript">
 (function(){
-var url = '\/file\/congguan_en.pdf';
+var url = 'congguan_en.pdf';
 var hidePaginator = "" === "true";
 var hideLoader = "" === "true";
 var selectedPageNum = parseInt("") || 1;
@@ -154,10 +154,10 @@ pageNum = selectedPageNum,
 pageRendering = false,
 pageNumPending = null,
 scale = 3,
-canvas = document.getElementById('pdf-canvas-bcd33f7e'),
+canvas = document.getElementById('pdf-canvas-0263e339'),
 ctx = canvas.getContext('2d'),
-paginator = document.getElementById("pdf-paginator-bcd33f7e"),
-loadingWrapper = document.getElementById('pdf-loadingWrapper-bcd33f7e');
+paginator = document.getElementById("pdf-paginator-0263e339"),
+loadingWrapper = document.getElementById('pdf-loadingWrapper-0263e339');
 showPaginator();
 showLoader();
 function renderPage(num) {
@@ -180,7 +180,7 @@ pageNumPending = null;
 }
 });
 });
-document.getElementById('pdf-pagenum-bcd33f7e').textContent = num;
+document.getElementById('pdf-pagenum-0263e339').textContent = num;
 }
 function showContent() {
 loadingWrapper.style.display = 'none';
@@ -209,7 +209,7 @@ return;
 pageNum--;
 queueRenderPage(pageNum);
 }
-document.getElementById('pdf-prev-bcd33f7e').addEventListener('click', onPrevPage);
+document.getElementById('pdf-prev-0263e339').addEventListener('click', onPrevPage);
 function onNextPage() {
 if (pageNum >= pdfDoc.numPages) {
 return;
@@ -217,11 +217,11 @@ return;
 pageNum++;
 queueRenderPage(pageNum);
 }
-document.getElementById('pdf-next-bcd33f7e').addEventListener('click', onNextPage);
+document.getElementById('pdf-next-0263e339').addEventListener('click', onNextPage);
 pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
 pdfDoc = pdfDoc_;
 var numPages = pdfDoc.numPages;
-document.getElementById('pdf-pagecount-bcd33f7e').textContent = numPages;
+document.getElementById('pdf-pagecount-0263e339').textContent = numPages;
 if(pageNum > numPages) {
 pageNum = numPages
 }
