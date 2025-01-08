@@ -2,4 +2,4 @@
 title: "My Resume"
 ---
 
-{{< embed-pdf url="/file/congguan_en.pdf" >}} 
+{{< embed-pdf url="congguan_en.pdf" >}} 
