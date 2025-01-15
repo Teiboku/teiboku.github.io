@@ -111,9 +111,9 @@ where:
 
 ##### Occlusion Map Calculation Formula
 The occlusion map \\(M_{occ}(x)\\) is calculated based on forward-backward optical flow consistency, as follows:
-\\(
+$$
 M_{occ}(x) = \min\left(s \cdot \| W(W(x; F_{fwd}); F_{bwd}) - x \|_2, 1 \right)
-\\)
+$$
 where:
 
 - \\(W\\): bilinear warping operator, used to map image coordinates \\(x\\) to new positions based on optical flow.
@@ -146,22 +146,22 @@ To exclude artifacts introduced by **alignment errors**, we generate an alignmen
     - For local patches \\(P_{\text{src}}\\) from the source image and \\(P_{\tilde{\text{ref}}}\\) from the aligned reference image:
         1. Subtract the mean of the patches \\(u_{\text{src}}\\) and \\(u_{\text{ref}}\\).
         2. Calculate the normalized difference:
-\\(
+$$
 P_\delta = (P_{\text{src}} - \mu_{\text{src}}) - (P_{\tilde{\text{ref}}} - \mu_{\text{ref}})
-\\)
+$$
 	- Generate the alignment rejection map
-\\(
+$$
 M_{\text{reject}}(x) = 1 - \exp\left(-\frac{\|P_\delta(x)\|_2^2}{\sigma_{\text{src}}^2(x) + \epsilon_0}\right)
-\\)
+$$
 #### Final Blending
 
-\\(
+$$
 M_{\text{blend}} = \max(1 - M_{\text{occ}} - M_{\text{defocus}} - M_{\text{flow}} - M_{\text{reject}}, 0)
-\\)
+$$
 The final output image is generated through alpha blending and cropped back to the full W image:
-\\(
+$$
 I_{\text{final}} = \text{uncrop}\left(M_{\text{blend}} \odot I_{\text{fusion}} + (1 - M_{\text{blend}}) \odot I_{\text{src}}, W\right)
-\\)
+$$
 By combining multiple masks (such as occlusion maps, defocus maps, optical flow uncertainty maps, and alignment rejection maps), we ensure high quality and robustness of the fusion results, avoiding the introduction of artifacts, blurriness, or alignment errors.
 
 ### Implementation Details
