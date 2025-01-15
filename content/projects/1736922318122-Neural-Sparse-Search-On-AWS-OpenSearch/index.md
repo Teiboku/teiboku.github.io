@@ -8,7 +8,9 @@ tags: ["example", "tag"]
 
 ## Some link for your reference
 [RFC by me](https://github.com/opensearch-project/neural-search/issues/646)
+
 [PR by me](https://github.com/opensearch-project/neural-search/pull/695/files)
+
 [Blog post by me](https://opensearch.org/blog/Introducing-a-neural-sparse-two-phase-algorithm/)
 
 
