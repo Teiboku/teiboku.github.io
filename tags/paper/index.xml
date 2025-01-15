@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Paper on Kannsou</title><link>https://teiboku.github.io/tags/paper/</link><description>Recent content in Paper on Kannsou</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://teiboku.github.io/tags/paper/index.xml" rel="self" type="application/rss+xml"/><item><title>Efficient Hybrid Zoom using Camera Fusion on Mobile Phones Reading Notes</title><link>https://teiboku.github.io/posts/efficient-hybird-zoom-using-camera-fusion-on-mobile-phones/</link><pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate><guid>https://teiboku.github.io/posts/efficient-hybird-zoom-using-camera-fusion-on-mobile-phones/</guid><description>&lt;h2 class="relative group">Abstract
+&lt;div id="abstract" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#abstract" aria-label="Anchor">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;p>DSLR 相机可以通过改变镜头距离或更换镜头类型实现多种变焦级别。然而，由于空间限制，这些技术在智能手机设备上不可行。大多数手机采用&lt;strong>混合变焦系统&lt;/strong>：通常使用低变焦级别的广角（W）摄像头和高变焦级别的长焦（T）摄像头。
+为了模拟介于 W 和 T 之间的变焦级别，这些系统会对来自 W 的图像进行裁剪和数字放大，导致细节损失显著。在本文中，我们提出了一种高效的移动设备混合变焦超分辨率系统。该系统捕获&lt;strong>同步的 W 和 T 图像对&lt;/strong>，并&lt;strong>利用机器学习模型将 T 的细节对齐并传递到 W&lt;/strong>。我们进一步开发了一种&lt;strong>自适应混合方法&lt;/strong>，该方法可以处理&lt;strong>景深不匹配、场景遮挡、流动不确定性以及对齐误差&lt;/strong>。为了尽量减少域差异，我们设计了一个双手机摄像头装置，用于捕捉真实场景输入和用于监督训练的真实标签数据。在真实场景的广泛评估中，我们的方法可以在移动平台上生成 12 百万像素图像，耗时 500 毫秒，并达到了TA.&lt;/p>
+&lt;h2 class="relative group">Key word
+&lt;div id="key-word" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#key-word" aria-label="Anchor">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;p>hybrid zoom, dual camera fusion, deep neural networks&lt;/p>
+&lt;h2 class="relative group">Key Takeaways
+&lt;div id="key-takeaways" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#key-takeaways" aria-label="Anchor">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;h3 class="relative group">Problem Addressed
+&lt;div id="problem-addressed" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#problem-addressed" aria-label="Anchor">#&lt;/a>
+&lt;/span>
+&lt;/h3>
+&lt;p>几乎所有的上采样方法（如双线性插值、双三次插值等）都会导致不同程度的画质下降, 因此, 涌现了众多利用高变焦 T 图像作为参考，为低变焦 W 图像添加真实细节的方法. 商业解决方案并未公开, 学术研究上效率较低. 。这些方法通常在移动设备上效率较低，容易受到参考图像缺陷的影响，并可能在训练和推理之间引入域差异。
+对以上问题.提出了一种混合变焦超分辨率（Hybrid Zoom Super-Resolution, HZSR）系统以加以解决。&lt;/p></description></item></channel></rss>
