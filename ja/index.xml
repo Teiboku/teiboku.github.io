@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>かんそう</title><link>https://teiboku.github.io/ja/</link><description>Recent content on かんそう</description><generator>Hugo -- gohugo.io</generator><language>ja</language><atom:link href="https://teiboku.github.io/ja/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://teiboku.github.io/ja/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://teiboku.github.io/ja/about/</guid><description>&lt;h2 class="relative group">自己紹介
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>かんそう</title><link>https://teiboku.github.io/ja/</link><description>Recent content on かんそう</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://teiboku.github.io/ja/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS OpenSearchにおける二相ニューラルスパース検索</title><link>https://teiboku.github.io/ja/projects/1736922318122-neural-sparse-search-on-aws-opensearch/</link><pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate><guid>https://teiboku.github.io/ja/projects/1736922318122-neural-sparse-search-on-aws-opensearch/</guid><description>&lt;h2 class="relative group">参考リンク
+&lt;div id="%E5%8F%82%E8%80%83%E3%83%AA%E3%83%B3%E3%82%AF" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#%E5%8F%82%E8%80%83%E3%83%AA%E3%83%B3%E3%82%AF" aria-label="アンカー">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;p>&lt;a href="https://github.com/opensearch-project/neural-search/issues/646" target="_blank">RFC by me&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/opensearch-project/neural-search/pull/695/files" target="_blank">PR by me&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://opensearch.org/blog/Introducing-a-neural-sparse-two-phase-algorithm/" target="_blank">Blog post by me&lt;/a>&lt;/p>
+&lt;h2 class="relative group">はじめに
+&lt;div id="%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB" aria-label="アンカー">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;p>ニューラルスパース検索は、OpenSearch 2.11で導入された意味的検索の効率的な方法です。これは、意味的技術を使用してクエリを解釈し、従来の検索では見逃される可能性のある用語を処理します。密なモデルは類似の結果を見つけることができますが、正確な一致を見逃すことがあります。ニューラルスパース検索は、意味的類似性と特定の用語の両方を捉えるためにスパース表現を使用し、より包括的な検索ソリューションを提供することで結果の説明と提示を改善します。&lt;/p>
+&lt;h2 class="relative group">背景
+&lt;div id="%E8%83%8C%E6%99%AF" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#%E8%83%8C%E6%99%AF" aria-label="アンカー">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;p>ニューラルスパース検索は、最初にテキスト（クエリまたは文書のいずれか）をより大きな用語のセットに拡張し、それぞれの意味的関連性に基づいて重み付けを行います。次に、Luceneの効率的な用語ベクトル計算を使用して、最高得点の結果を特定します。このアプローチは、インデックスとメモリコストの削減、ならびに計算コストの低下をもたらします。たとえば、k-NN検索を使用した密なエンコーディングは、検索時にRAMコストを7.9%増加させますが、ニューラルスパース検索はネイティブのLuceneインデックスを使用し、検索時のRAMコストの増加を回避します。さらに、ニューラルスパース検索は、密なエンコーディングと比較してはるかに小さなインデックスサイズをもたらします。文書専用モデルは、密なエンコーディングインデックスのわずか10.4%のサイズのインデックスを生成し、バイエンコーダの場合、インデックスサイズは密なエンコーディングインデックスの7.2%です。&lt;/p>
+&lt;p>これらの利点を考慮して、私たちはニューラルスパース検索をさらに効率的にするために改良を続けています。OpenSearch 2.15では、新しい機能として二相検索パイプラインが導入されました。このパイプラインは、ニューラルスパースクエリ用語を2つのカテゴリに分割します：検索により関連性の高い高得点トークンと、関連性の低い低得点トークンです。最初に、アルゴリズムは高得点トークンを使用して文書を選択し、その後、高得点トークンと低得点トークンの両方を含めてそれらの文書のスコアを再計算します。このプロセスは、最終的なランキングの質を維持しながら、計算負荷を大幅に削減します。&lt;/p>
+&lt;h2 class="relative group">二相アルゴリズム
+&lt;div id="%E4%BA%8C%E7%9B%B8%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#%E4%BA%8C%E7%9B%B8%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0" aria-label="アンカー">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;p>二相検索アルゴリズムは、2つの段階で動作します：&lt;/p></description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://teiboku.github.io/projects/1736922318122-neural-sparse-search-on-aws-opensearch/featured.png"/></item><item><title/><link>https://teiboku.github.io/ja/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://teiboku.github.io/ja/about/</guid><description>&lt;h2 class="relative group">自己紹介
 &lt;div id="%E8%87%AA%E5%B7%B1%E7%B4%B9%E4%BB%8B" class="anchor">&lt;/div>
 &lt;span
 class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
@@ -145,44 +183,4 @@ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 
 &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
 style="text-decoration-line: none !important;" href="#dwadad" aria-label="アンカー">#&lt;/a>
 &lt;/span>
-&lt;/h1></description></item><item><title/><link>https://teiboku.github.io/ja/projects/1736922318122-neural-sparse-search-on-aws-opensearch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://teiboku.github.io/ja/projects/1736922318122-neural-sparse-search-on-aws-opensearch/</guid><description>&lt;h1 class="relative group">Start of Selection
-&lt;div id="start-of-selection" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-style="text-decoration-line: none !important;" href="#start-of-selection" aria-label="アンカー">#&lt;/a>
-&lt;/span>
-&lt;/h1>
-&lt;hr>
-&lt;h2 class="relative group">title: &amp;ldquo;AWS OpenSearchにおける二相ニューラルスパース検索&amp;rdquo;
-date: 2025-01-15
-draft: false
-description: &amp;ldquo;説明&amp;rdquo;
-tags: [&amp;ldquo;例&amp;rdquo;, &amp;ldquo;タグ&amp;rdquo;]
-&lt;div id="tags-%E4%BE%8B-%E3%82%BF%E3%82%B0" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-style="text-decoration-line: none !important;" href="#tags-%E4%BE%8B-%E3%82%BF%E3%82%B0" aria-label="アンカー">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;h2 class="relative group">参考リンク
-&lt;div id="%E5%8F%82%E8%80%83%E3%83%AA%E3%83%B3%E3%82%AF" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-style="text-decoration-line: none !important;" href="#%E5%8F%82%E8%80%83%E3%83%AA%E3%83%B3%E3%82%AF" aria-label="アンカー">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;p>&lt;a href="https://github.com/opensearch-project/neural-search/issues/646" target="_blank">RFC by me&lt;/a>
-&lt;a href="https://github.com/opensearch-project/neural-search/pull/695/files" target="_blank">PR by me&lt;/a>
-&lt;a href="https://opensearch.org/blog/Introducing-a-neural-sparse-two-phase-algorithm/" target="_blank">Blog post by me&lt;/a>&lt;/p>
-&lt;h2 class="relative group">はじめに
-&lt;div id="%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB" class="anchor">&lt;/div>
-&lt;span
-class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-style="text-decoration-line: none !important;" href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB" aria-label="アンカー">#&lt;/a>
-&lt;/span>
-&lt;/h2>
-&lt;p>ニューラルスパース検索は、OpenSearch 2.11で導入された意味的検索の効率的な方法です。これは、意味的技術を使用してクエリを解釈し、従来の検索では見逃される可能性のある用語を処理します。密なモデルは類似の結果を見つけることができますが、正確な一致を見逃すことがあります。ニューラルスパース検索は、意味的類似性と特定の用語の両方を捉えるためにスパース表現を使用し、より包括的な検索ソリューションを提供することで結果の説明と提示を改善します。&lt;/p></description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://teiboku.github.io/projects/1736922318122-neural-sparse-search-on-aws-opensearch/featured.png"/></item></channel></rss>
+&lt;/h1></description></item></channel></rss>
