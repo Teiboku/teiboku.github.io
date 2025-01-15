@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Kannsou</title><link>https://teiboku.github.io/projects/</link><description>Recent content in Projects on Kannsou</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://teiboku.github.io/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>D5 Render-Rhino Sync Plugin</title><link>https://teiboku.github.io/projects/1735963425218-d5-render-rhino-sync-plugin/</link><pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate><guid>https://teiboku.github.io/projects/1735963425218-d5-render-rhino-sync-plugin/</guid><description>&lt;p>an example to get you started&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Kannsou</title><link>https://teiboku.github.io/projects/</link><description>Recent content in Projects on Kannsou</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://teiboku.github.io/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>Two Phase Neural Sparse Search On AWS OpenSearch</title><link>https://teiboku.github.io/projects/1736922318122-neural-sparse-search-on-aws-opensearch/</link><pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate><guid>https://teiboku.github.io/projects/1736922318122-neural-sparse-search-on-aws-opensearch/</guid><description>&lt;h2 class="relative group">Some link for your reference
+&lt;div id="some-link-for-your-reference" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#some-link-for-your-reference" aria-label="Anchor">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;p>&lt;a href="https://github.com/opensearch-project/neural-search/issues/646" target="_blank">RFC by me&lt;/a>
+&lt;a href="https://github.com/opensearch-project/neural-search/pull/695/files" target="_blank">PR by me&lt;/a>
+&lt;a href="https://opensearch.org/blog/Introducing-a-neural-sparse-two-phase-algorithm/" target="_blank">Blog post by me&lt;/a>&lt;/p>
+&lt;h2 class="relative group">Introduction
+&lt;div id="introduction" class="anchor">&lt;/div>
+&lt;span
+class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#&lt;/a>
+&lt;/span>
+&lt;/h2>
+&lt;p>Neural sparse search is an efficient method for semantic retrieval introduced in OpenSearch 2.11. It uses semantic techniques to interpret queries, handling terms that traditional search may miss. While dense models find similar results, they can overlook exact matches. Neural sparse search uses sparse representations to capture both semantic similarities and specific terms, improving result explanation and presentation by providing a more comprehensive retrieval solution.&lt;/p></description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://teiboku.github.io/projects/1736922318122-neural-sparse-search-on-aws-opensearch/featured.png"/></item><item><title>D5 Render-Rhino Sync Plugin</title><link>https://teiboku.github.io/projects/1735963425218-d5-render-rhino-sync-plugin/</link><pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate><guid>https://teiboku.github.io/projects/1735963425218-d5-render-rhino-sync-plugin/</guid><description>&lt;p>an example to get you started&lt;/p>
 &lt;h1 class="relative group">This is a heading
 &lt;div id="this-is-a-heading" class="anchor">&lt;/div>
 &lt;span
