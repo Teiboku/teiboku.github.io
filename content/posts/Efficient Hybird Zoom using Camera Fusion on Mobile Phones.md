@@ -1,4 +1,12 @@
-# Paper Title: Efficient Hybrid Zoom using Camera Fusion on Mobile Phones
+---
+title: "Efficient Hybrid Zoom using Camera Fusion on Mobile Phones Reading Notes"
+date: 2025-01-15
+draft: false
+description: "a description"
+tags: ["example", "tag", "paper"]
+---
+{{< katex >}}
+
 ## Abstract
 DSLR 相机可以通过改变镜头距离或更换镜头类型实现多种变焦级别。然而，由于空间限制，这些技术在智能手机设备上不可行。大多数手机采用**混合变焦系统**：通常使用低变焦级别的广角（W）摄像头和高变焦级别的长焦（T）摄像头。
 为了模拟介于 W 和 T 之间的变焦级别，这些系统会对来自 W 的图像进行裁剪和数字放大，导致细节损失显著。在本文中，我们提出了一种高效的移动设备混合变焦超分辨率系统。该系统捕获**同步的 W 和 T 图像对**，并**利用机器学习模型将 T 的细节对齐并传递到 W**。我们进一步开发了一种**自适应混合方法**，该方法可以处理**景深不匹配、场景遮挡、流动不确定性以及对齐误差**。为了尽量减少域差异，我们设计了一个双手机摄像头装置，用于捕捉真实场景输入和用于监督训练的真实标签数据。在真实场景的广泛评估中，我们的方法可以在移动平台上生成 12 百万像素图像，耗时 500 毫秒，并达到了TA.
