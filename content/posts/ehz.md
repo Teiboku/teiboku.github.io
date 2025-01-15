@@ -45,13 +45,13 @@ When the user adjusts the zoom to a medium range (e.g., 3-5 times) and presses t
 #### **Image Alignment**: 
 First, we perform **global coarse alignment through keypoint matching**, followed by **local dense alignment using optical flow** (see Section 3.1).
 	**Coarse Alignment:**  
-		First, we crop the image from the wide-angle camera (W) to match the field of view (FOV) of the telephoto camera (T). Next, we use bicubic interpolation to adjust the spatial resolution of W to match T (4k×3k). Then, we estimate the global 2D translation vector using the FAST feature point matching algorithm (Rosten and Drummond 2006) and adjust the cropped W to obtain the adjusted image \\( I_{src} \\).
+		First, we crop the image from the wide-angle camera (W) to match the field of view (FOV) of the telephoto camera (T). Next, we use bicubic interpolation to adjust the spatial resolution of W to match T (4k×3k). Then, we estimate the global 2D translation vector using the FAST feature point matching algorithm (Rosten and Drummond 2006) and adjust the cropped W to obtain the adjusted image \\(I_{src}\\).
 	**Dense Alignment:**  
-		We use PWC-Net to estimate the dense optical flow between \\( I_{src} \\) and \\( I_{ref} \\). It is important to note that the average offset between W and T at 12MP resolution is about 150 pixels, which is much larger than the motion range in most optical flow training data. Therefore, the optical flow estimated from 12MP images is often very noisy. 
-		To improve accuracy, we downsample \\( I_{src} \\) and \\( I_{ref} \\) to a **smaller resolution of 384×512 to predict** the optical flow, then **upsample the flow to the original resolution** and deform \\( I_{ref} \\) to obtain \\( \tilde{I}_{ref} \\) using bilinear resampling. This method provides more accurate and robust optical flow estimates at a smaller scale.
+		We use PWC-Net to estimate the dense optical flow between \\(I_{src}\\) and \\(I_{ref}\\). It is important to note that the average offset between W and T at 12MP resolution is about 150 pixels, which is much larger than the motion range in most optical flow training data. Therefore, the optical flow estimated from 12MP images is often very noisy. 
+		To improve accuracy, we downsample \\(I_{src}\\) and \\(I_{ref}\\) to a **smaller resolution of 384×512 to predict** the optical flow, then **upsample the flow to the original resolution** and deform \\(I_{ref}\\) to obtain \\(\tilde{I}_{ref}\\) using bilinear resampling. This method provides more accurate and robust optical flow estimates at a smaller scale.
 	**Optimization**
 		To accommodate the computational resource limitations of mobile devices, we removed the DenseNet structure from the original PWC-Net, reducing the model size by **50%**, latency by **56%**, and peak memory by **63%**. Although the endpoint error (EPE) of optical flow increased by **8%** on the Sintel dataset, the visual quality of the optical flow remains similar.  
-		Additionally, we generate an occlusion map \\( M_{occ} \\) using forward-backward consistency checks (Alvarez et al. 2007) to identify areas occluded during alignment.
+		Additionally, we generate an occlusion map \\(M_{occ}\\) using forward-backward consistency checks (Alvarez et al. 2007) to identify areas occluded during alignment.
 #### **Image Fusion**:  
 We use UNet (Ronneberger et al. 2015) to fuse the brightness channel of the cropped image from the wide-angle camera (W) with the deformed reference image from the telephoto camera (T) (see Section 3.2).
 
@@ -59,15 +59,15 @@ Using the source image, the deformed reference image, and the occlusion mask as 
 **Fusion Process:**  
 To maintain color consistency in the W image, we perform fusion only in the luminance space. The specific implementation is as follows:
 1. **Input Preparation:**
-    - Convert the source image \\( I_{src} \\) to a grayscale image, denoted as \\( Y_{src} \\).
-    - Convert the deformed reference image \\( I_{ref} \\) to a grayscale image, denoted as \\( \tilde{Y}_{ref} \\).
-    - Input the occlusion mask \\( M_{occ} \\).
+    - Convert the source image \\(I_{src}\\) to a grayscale image, denoted as \\(Y_{src}\\).
+    - Convert the deformed reference image \\(I_{ref}\\) to a grayscale image, denoted as \\(\tilde{Y}_{ref}\\).
+    - Input the occlusion mask \\(M_{occ}\\).
 2. **Fusion Network:**
-    - We construct a 5-layer UNet network, using \\( Y_{src} \\), \\( \tilde{Y}_{ref} \\), and \\( M_{occ} \\) as inputs to generate the fused grayscale image \\( Y_{fusion} \\).
+    - We construct a 5-layer UNet network, using \\(Y_{src}\\), \\(\tilde{Y}_{ref}\\), and \\(M_{occ}\\) as inputs to generate the fused grayscale image \\(Y_{fusion}\\).
     - The detailed architecture of this UNet is provided in the appendix.
 3. **Color Recovery:**
-    - Combine the fused grayscale image \\( Y_{fusion} \\) with the UV color channels of \\( I_{src} \\).
-    - Convert back to RGB space to generate the fused output image \\( I_{fusion} \\).
+    - Combine the fused grayscale image \\(Y_{fusion}\\) with the UV color channels of \\(I_{src}\\).
+    - Convert back to RGB space to generate the fused output image \\(I_{fusion}\\).
 #### **Adaptive Blending**:  
 
 Although machine learning models have strong capabilities in image alignment and fusion, mismatches between W and T can still introduce noticeable artifacts in the output. These mismatches include:
@@ -76,7 +76,7 @@ Although machine learning models have strong capabilities in image alignment and
 2. **Occluded pixels**
 3. **Warping artifacts during the alignment stage**
 
-To address these issues, we propose an adaptive blending strategy that combines **alpha masks** derived from **defocus maps**, **occlusion maps**, **optical flow uncertainty maps**, and **alignment rejection maps** to adaptively blend \\( Y_{src} \\) and \\( Y_{fusion} \\). The final output image eliminates significant artifacts and maintains high robustness in cases where pixel-level consistency issues exist between W and T.
+To address these issues, we propose an adaptive blending strategy that combines **alpha masks** derived from **defocus maps**, **occlusion maps**, **optical flow uncertainty maps**, and **alignment rejection maps** to adaptively blend \\(Y_{src}\\) and \\(Y_{fusion}\\). The final output image eliminates significant artifacts and maintains high robustness in cases where pixel-level consistency issues exist between W and T.
 ##### The Narrow Depth of Field Issue of Telephoto (T)
 We observe that the telephoto camera (T) on mobile devices typically has a narrower depth of field (DoF) than the wide-angle camera (W). This is because depth of field is proportional to the square of the f-stop number and focal length. Typically, the focal length ratio between T and W is greater than 3, while the f-stop ratio is less than 2.5. Therefore, the depth of field of T is usually significantly narrower than that of W. Thus, it is necessary to exclude defocused pixel areas using the defocus map to avoid introducing artifacts. Estimating the defocus map from a single image is a pathological problem that usually requires complex and computationally intensive machine learning models. To this end, we propose an efficient algorithm that reuses the optical flow information computed during the alignment stage to generate the defocus map:
 
@@ -91,44 +91,44 @@ To estimate the defocus map, we need to determine two key pieces of information:
 Since the FOV of W and T is approximately parallel (fronto-parallel), and the magnitude of optical flow is proportional to the camera disparity, which is related to scene depth, we design an efficient optical flow-based defocus map estimation algorithm, as follows (see Figure 5):
 - **Obtain the Focus Region of Interest (ROI)**:
     - Obtain the focus area from the camera's auto-focus module. This module provides a rectangular area representing the region where most pixels in the T image are sharply focused (i.e., the focus ROI).
-- **Estimate the Focus Position \\( x_f \\) based on Optical Flow**:
+- **Estimate the Focus Position \\(x_f\\) based on Optical Flow**:
     - Using dual-camera stereo vision, treat optical flow as a proxy for scene depth. Assuming that in a static scene, pixels located in the same focal plane have similar optical flow vectors (Szeliski 2022).
     - Apply the **k-means clustering algorithm** to the optical flow vectors within the focus ROI to determine the area with the highest clustering density (i.e., the maximum cluster).
-    - The cluster center is defined as the focus position \\( x_f \\).
+    - The cluster center is defined as the focus position \\(x_f\\).
 - **Estimate Relative Depth of Pixels and Generate the Defocus Map**:
-    - Calculate the Euclidean distance (L2 distance) between the optical flow vector of each pixel and the optical flow vector at the focus position \\( x_f \\).
+    - Calculate the Euclidean distance (L2 distance) between the optical flow vector of each pixel and the optical flow vector at the focus position \\(x_f\\).
 
 ##### Defocus Map Calculation Formula
-The calculation formula for the defocus map \\( M_{defocus}(x) \\) is as follows:
+The calculation formula for the defocus map \\(M_{defocus}(x)\\) is as follows:
 \\(
 M_{defocus}(x) = \text{sigmoid} \left( \frac{\| F_{fwd}(x) - F_{fwd}(x_f) \|_2^2 - \gamma}{\sigma_f} \right)
 \\)
 where:
--  \\( F_{fwd}(x) \\): the forward optical flow vector of pixel \\( x \\).
-- \\( F_{fwd}(x_f) \\): the forward optical flow vector at the focus position \\( x_f \\).
--  \\( \gamma \\): a threshold that controls the tolerance range.
--  \\( \sigma_f \\): a parameter that controls the smoothness of the defocus map.
+-  \\(F_{fwd}(x)\\): the forward optical flow vector of pixel \\(x\\).
+- \\(F_{fwd}(x_f)\\): the forward optical flow vector at the focus position \\(x_f\\).
+-  \\(\gamma\\): a threshold that controls the tolerance range.
+-  \\(\sigma_f\\): a parameter that controls the smoothness of the defocus map.
 
 ##### Occlusion Map Calculation Formula
-The occlusion map \\( M_{occ}(x) \\) is calculated based on forward-backward optical flow consistency, as follows:
+The occlusion map \\(M_{occ}(x)\\) is calculated based on forward-backward optical flow consistency, as follows:
 \\(
 M_{occ}(x) = \min\left(s \cdot \| W(W(x; F_{fwd}); F_{bwd}) - x \|_2, 1 \right)
 \\)
 where:
 
-- \\( W \\): bilinear warping operator, used to map image coordinates \\( x \\) to new positions based on optical flow.
-- \\( F_{fwd} \\): forward optical flow from the source image \\( I_{src} \\) to the reference image \\( I_{ref} \\).
-- \\( F_{bwd} \\): backward optical flow from the reference image \\( I_{ref} \\) to the source image \\( I_{src} \\).
-- \\( s \\): a scaling factor used to adjust the sensitivity of optical flow differences.
-- \\( x \\): 2D image coordinates on the source image.
+- \\(W\\): bilinear warping operator, used to map image coordinates \\(x\\) to new positions based on optical flow.
+- \\(F_{fwd}\\): forward optical flow from the source image \\(I_{src}\\) to the reference image \\(I_{ref}\\).
+- \\(F_{bwd}\\): backward optical flow from the reference image \\(I_{ref}\\) to the source image \\(I_{src}\\).
+- \\(s\\): a scaling factor used to adjust the sensitivity of optical flow differences.
+- \\(x\\): 2D image coordinates on the source image.
 
 ##### Optical Flow Uncertainty Map
 Due to the inherently ill-posed nature of dense correspondence problems, we enhance the functionality of PWC-Net to output an optical flow uncertainty map, which describes the uncertainty of each pixel's optical flow prediction. The method is as follows:
 1. **Uncertainty Modeling**:  
-    The enhanced PWC-Net predicts a multivariate Laplacian distribution for the optical flow vector of each pixel, rather than a single point estimate. It predicts two additional channels representing the log-variance of optical flow in the x and y directions, denoted as \\( {Var}_x \\) and \\( {Var}_y \\).
+    The enhanced PWC-Net predicts a multivariate Laplacian distribution for the optical flow vector of each pixel, rather than a single point estimate. It predicts two additional channels representing the log-variance of optical flow in the x and y directions, denoted as \\({Var}_x\\) and \\({Var}_y\\).
     
 2. **Convert to Pixel Units**:  
-    The log-variance is converted to pixel units using the following formula—here, \\( S(x) \\) is the optical flow uncertainty value for each pixel.
+    The log-variance is converted to pixel units using the following formula—here, \\(S(x)\\) is the optical flow uncertainty value for each pixel.
 \\(
 S(x) = \sqrt{\exp(\log(\text{Var}_x(x))) + \exp(\log(\text{Var}_y(x)))}
 \\)
@@ -141,10 +141,10 @@ The optical flow uncertainty map typically has higher values in object boundarie
 ##### Alignment Rejection Map
 To exclude artifacts introduced by **alignment errors**, we generate an alignment rejection map by comparing the local similarity between the source image and the aligned reference image. The method is as follows:
 - **Match Optical Resolution**:
-    - Use bilinear interpolation to adjust the resolution of the aligned reference frame \\( \tilde{Y}_{\text{ref}} \\) to match the optical resolution of W, resulting in a downsampled image \\( \tilde{Y}_{\text{ref}}^\downarrow \\).
+    - Use bilinear interpolation to adjust the resolution of the aligned reference frame \\(\tilde{Y}_{\text{ref}}\\) to match the optical resolution of W, resulting in a downsampled image \\(\tilde{Y}_{\text{ref}}^\downarrow\\).
 - **Calculate Local Differences**:
-    - For local patches \\( P_{\text{src}} \\) from the source image and \\( P_{\tilde{\text{ref}}} \\) from the aligned reference image:
-        1. Subtract the mean of the patches \\( u_{\text{src}} \\) and \\( u_{\text{ref}} \\).
+    - For local patches \\(P_{\text{src}}\\) from the source image and \\(P_{\tilde{\text{ref}}}\\) from the aligned reference image:
+        1. Subtract the mean of the patches \\(u_{\text{src}}\\) and \\(u_{\text{ref}}\\).
         2. Calculate the normalized difference:
 \\(
 P_\delta = (P_{\text{src}} - \mu_{\text{src}}) - (P_{\tilde{\text{ref}}} - \mu_{\text{ref}})
