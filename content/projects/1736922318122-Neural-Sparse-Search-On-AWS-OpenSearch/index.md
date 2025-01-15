@@ -4,6 +4,7 @@ date: 2025-01-15
 draft: false
 description: "a description"
 tags: ["example", "tag"]
+summary: "A speed up algorithm for AWS OpenSearch Neural Sparse Search"
 ---
 
 ## Some link for your reference

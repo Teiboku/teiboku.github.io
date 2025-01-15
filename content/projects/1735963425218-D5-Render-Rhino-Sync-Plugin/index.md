@@ -4,6 +4,7 @@ date: 2025-01-04
 draft: false
 description: "a description"
 tags: ["example", "tag"]
+summary: "A rapid plugin for D5 Render-Rhino."
 ---
 
 ## D5 Render

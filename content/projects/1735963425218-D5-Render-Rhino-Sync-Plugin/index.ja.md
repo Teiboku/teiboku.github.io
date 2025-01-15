@@ -4,6 +4,7 @@ date: 2025-01-04
 draft: false
 description: "D5 RenderとRhinoの同期プラグイン"
 tags: ["example", "tag"]
+summary: "D5 RenderとRhinoの同期プラグイン"
 ---
 
 ## D5 Render

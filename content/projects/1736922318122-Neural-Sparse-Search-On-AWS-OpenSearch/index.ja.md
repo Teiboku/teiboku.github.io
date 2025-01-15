@@ -4,6 +4,7 @@ date: 2025-01-15
 draft: false
 description: "AWS OpenSearchにおける二相ニューラルスパース検索"
 tags: ["AWS", "OpenSearch", "Neural Search", "Two Phase Search"]
+summary: "AWS OpenSearchにおける二相ニューラルスパース検索"
 ---
 
 ## 参考リンク
