@@ -1,15 +1,16 @@
-# Start of Selection
 ---
 title: "AWS OpenSearchにおける二相ニューラルスパース検索"
 date: 2025-01-15
 draft: false
-description: "説明"
-tags: ["例", "タグ"]
+description: "AWS OpenSearchにおける二相ニューラルスパース検索"
+tags: ["AWS", "OpenSearch", "Neural Search", "Two Phase Search"]
 ---
 
 ## 参考リンク
-[RFC by me](https://github.com/opensearch-project/neural-search/issues/646)
-[PR by me](https://github.com/opensearch-project/neural-search/pull/695/files)
+[RFC by me](https://github.com/opensearch-project/neural-search/issues/646) 
+
+[PR by me](https://github.com/opensearch-project/neural-search/pull/695/files) 
+
 [Blog post by me](https://opensearch.org/blog/Introducing-a-neural-sparse-two-phase-algorithm/)
 
 
