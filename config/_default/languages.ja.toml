@@ -1,6 +1,6 @@
 languageCode = "ja"
 languageName = "日本語"
-weight = 2
+weight = 1
 
 title = "かんそう"
 
@@ -8,7 +8,7 @@ title = "かんそう"
   displayName = "日本語"
   isoCode = "ja"
   rtl = false
-  description = "My awesome website"
+  description = "Home Page of GUAN CONG."
   dateFormat = "2006年1月2日"
 
 [params.author]
@@ -17,8 +17,8 @@ title = "かんそう"
   headline = """
   私の名前「GUAN CONG」は日本語で「感想」と読みます。 
   感想とは印象や思考を意味します。 
-  人生でより多くの経験を積み、思い出や感情を作り、学び、楽しみ、充実した生活を送りたいと思います。
-  アイコンは私の大好きなラグドール猫です。
+  人生でより多くの経験を積み、思い出や感情を作り、学び、
+  楽しみ、充実した生活を送りたいと思います。
   """
   bio = "早稲田大学でコンピュータサイエンスを学んでいる学生です。機械学習、自然言語処理、コンピュータビジョンに興味があります。"
   links = [

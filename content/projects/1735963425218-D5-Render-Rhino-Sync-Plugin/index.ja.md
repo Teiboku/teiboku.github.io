@@ -1,9 +1,9 @@
 ---
 title: "D5 Render-Rhino 同期プラグイン"
-date: 2025-01-04
+date: 2022-01-04
 draft: false
 description: "D5 RenderとRhinoの同期プラグイン"
-tags: ["example", "tag"]
+tags: ["C++", "tag"]
 summary: "D5 RenderとRhinoの同期プラグイン"
 ---
 

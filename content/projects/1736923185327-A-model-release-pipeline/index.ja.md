@@ -1,15 +1,24 @@
 ---
-title: "A model release pipeline"
-date: 2025-01-15
+title: "モデルリリースパイプライン"
+date: 2024-01-15
 draft: false
-description: "a description"
-tags: ["example", "tag"]
-summary: "A model release pipeline for our semantic search"
+description: "説明"
+tags: ["例", "タグ"]
+summary: "セマンティック検索のためのモデルリリースパイプライン"
 ---
 ## 参考リンク
-[PR by me](https://github.com/opensearch-project/opensearch-py-ml/pull/394)
 
-[リリースされたモデル](https://huggingface.co/opensearch-project)
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <a href="https://github.com/opensearch-project/opensearch-py-ml/pull/394" class="block p-4 border rounded-lg hover:shadow-lg transition">
+        <h3 class="font-semibold">私のPR</h3>
+        <p class="text-sm text-gray-600">opensearch-py-ml リポジトリのプルリクエスト</p>
+    </a>
+    <a href="https://huggingface.co/opensearch-project" class="block p-4 border rounded-lg hover:shadow-lg transition">
+        <h3 class="font-semibold">リリースされたモデル</h3>
+        <p class="text-sm text-gray-600">Huggingface 上の公式モデルページ</p>
+    </a>
+</div>
+
 ## はじめに
 
 AWS OpenSearchでは、ユーザーがダウンロードできる事前トレーニング済みモデルを提供しています。これらの事前トレーニング済みモデルは、専用のパイプラインを通じて管理され、トレーニングから推論、デプロイメントまでのさまざまな検証が行われます。モデルは指定されたサーバーにアップロードされ、関連するドキュメントが適宜更新されます。
@@ -27,6 +36,8 @@ AWS OpenSearchでは、ユーザーがダウンロードできる事前トレー
 - リポジトリのドキュメントと記録を更新：アップロードアクションをMODEL_UPLOAD_HISTORY.md、supported_models.jsonに追加し、CHANGELOG.mdを更新します。
 - 下流のJenkinsプロセスをトリガーして、モデルのリリースまたはml-modelsへの統合をさらに完了します。
 
+
+ 
 ## 使用技術
 - Python
 - GitHub Actions

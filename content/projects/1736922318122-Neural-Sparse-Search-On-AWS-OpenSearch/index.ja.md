@@ -1,6 +1,6 @@
 ---
 title: "AWS OpenSearchにおける二相ニューラルスパース検索"
-date: 2025-01-15
+date: 2023-01-15
 draft: false
 description: "AWS OpenSearchにおける二相ニューラルスパース検索"
 tags: ["AWS", "OpenSearch", "Neural Search", "Two Phase Search"]
@@ -36,7 +36,9 @@ summary: "AWS OpenSearchにおける二相ニューラルスパース検索"
 
 ## パフォーマンスメトリクス
 データ分布に応じて、二相プロセッサは文書専用モデルで1.22倍から1.78倍の速度向上を達成しました。
-![two-phase-doc-model-p99-latency](https://opensearch.org/assets/media/blog-images/2024-08-07-Introducing-a-neural-sparse-two-phase-algorithm/two-phase-doc-model-p99-latency.jpg)
+![two-phase-doc-model-p99-latency]](doc-only.png )
+
+
 また、バイエンコーダモデルで4.15倍から6.87倍の速度向上を達成しました。
-![two-phase-doc-model-p99-latency](https://opensearch.org/assets/media/blog-images/2024-08-07-Introducing-a-neural-sparse-two-phase-algorithm/two-phase-doc-model-p99-latency.jpg)
+![two-phase-bi-model-p99-latency](bi-encoder.png)
 # End of Selection

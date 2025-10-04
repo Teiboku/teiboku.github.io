@@ -4,7 +4,7 @@
 
 theme = ["hugo-embed-pdf-shortcode", "blowfish"]
 baseURL = "https://teiboku.github.io/"
-defaultContentLanguage = "en"
+defaultContentLanguage = "ja"
 
 enableRobotsTXT = true
 [pagination]

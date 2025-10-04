@@ -7,7 +7,7 @@ enableSearch = true
 enableCodeCopy = true
 
 [header]
-layout = "basic"
+layout = "hero"
 
 [footer]
 showCopyright = false
@@ -18,7 +18,7 @@ showMenu = false
 
 [homepage]
 layout = "background"
-homepageImage = "nujabes.jpg"
+homepageImage = "nujabes.png"
 showRecent = false
 showRecentItems = 5
 showMoreLink = false
@@ -32,7 +32,7 @@ showDate = true
 showDateUpdated = false
 showAuthor = true
 showHero = true
-heroStyle = "basic"
+heroStyle = "big"
 showBreadcrumbs = true
 showDraftLabel = true
 showEdit = false

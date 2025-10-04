@@ -1,5 +1,5 @@
 [[main]]
-name = "記事"
+name = "ブログ"
 pageRef = "posts"
 weight = 1
 
@@ -14,7 +14,7 @@ weight = 2
 
 
 [[main]]
-name = "経歴"
+name = "職務経歴書"
 pageRef = "resume"
 weight = 3
 

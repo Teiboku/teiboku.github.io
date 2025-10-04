@@ -1,0 +1,7 @@
+:root {
+  /* neutral 10 色阶 */
+  --color-neutral-50: 245, 245, 240;
+  /* … */
+  --color-primary-500: 123, 81, 160; /* 取自莫奈紫色调 */
+  /* secondary、neutral 同理定义 10 个色阶 */
+}

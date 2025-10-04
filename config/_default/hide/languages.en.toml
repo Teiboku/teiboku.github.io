@@ -1,0 +1,22 @@
+languageCode = "en"
+languageName = "English"
+weight = 2
+
+title = "Kannsou"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  description = "My awesome website"
+  dateFormat = "2 January 2006"
+
+[params.author]
+  name = "かん そう"
+  image = "goubao.jpg"
+  headline = "My name GUAN CONG is pronounced as Kannsou (感想) in Japanese, which means impression or reflection. I want to experience more in life, create more memories and feelings, and strive to learn, enjoy and live fully. The icon is a ragdoll cat, which is my favorite cat."
+  bio = "I'm a computer science student at the Waseda University, Tokyo, Japan. I'm interested in machine learning, natural language processing, and computer vision."
+  links = [
+    { email = "mailto:bkannsou@gmail.com" },  
+    { linkedin = "https://www.linkedin.com/in/cong-g-461770185/"}
+  ]
