@@ -1,5 +1,5 @@
 ---
-title: "CLIPに基づく雨水パターン認識による画像除雨モデル"
+title: "Pattern Recognition 採択：CLIP に基づく雨水パターン認識による画像除雨モデル"
 date: 2025-10-18
 draft: false
 description: "a description"
