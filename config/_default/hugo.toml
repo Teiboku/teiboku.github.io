@@ -16,8 +16,10 @@ buildFuture = false
 
 enableEmoji = true
 enableInlineShortcodes = true
+[services]
+  [services.googleAnalytics]
+    id = 'G-81CKDRV36F'
 
-googleAnalytics = "G-81CKDRV36F"
 
 [taxonomies]
   tag = "tags"
